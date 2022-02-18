@@ -24,12 +24,17 @@ Our application will contain a dashboard which will reflect the total count of m
 
 The dashboard will include different visualizations like bar chart, map, line chart etc. There will be two drop downs for year and province. User can select the desired year and province and the data corresponding to the selection will be reflected. This dashboard will answer the research questions mentioned above. It will be a user friendly application and can be used to analyze the wind turbines in Canada using different representations. 
 
-Application will have different variable selection option available for user that will filter the data and can visualize the results as per the selection. The main aim of this application will be to show province/ territory vice the data for the wind turbines in Canada.
+Different visualizations and a small summary corresponding to them are as mentioned below:
 
-This application is basically a platform where user can visually explore the data set depicting the windpower capacity in Canada.
-The sample sketch of the dashboard is as shown below:
+**BAR GRAPH FOR MODELS IN SELECTED PROVINCE:** This will display the total number of different models of turbines in the selected province.
 
-<img src ="dashboard.jpg" width="100px">
+**TURBINE COUNT AS PER YEAR:** This is a line graph which will display the total number of turbines which have changed over the years for a particular province.
+
+**LOCATION OF WIND TURBINE:** This is a map of a particular province and will depict the locations of the turbines in a particular province/ territory.
+
+**TOTAL CAPACITY OF TURBINES** This is a bar graph which will display the total capacity of turbines for different provinces in Canada.
+
+<img src ="dashboard.jpg" width="200px" height="200px">
 
 
 ## Describe your dataset in about 150-200 words
