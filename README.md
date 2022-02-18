@@ -34,7 +34,7 @@ Different visualizations and a small summary corresponding to them are as mentio
 
 **TOTAL CAPACITY OF TURBINES** This is a bar graph which will display the total capacity of turbines for different provinces in Canada.
 
-<img src ="dashboard.jpg" width="800px" height="600px">
+<img src ="dashboard.jpg" width="800px" height="800px">
 
 
 ## Describe your dataset in about 150-200 words
