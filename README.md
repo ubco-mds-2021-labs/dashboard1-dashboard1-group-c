@@ -12,7 +12,7 @@ Also, the dashboard will let the user know the number of different models in a p
 - Aishwarya Sharma: A data science enthusiast who loves to play with data and is always eager to explore more.
 - LingXiang Zou: A data science student who loves hiking and video gaming.
 - Sean Casey: Software developer and data science student who likes biking, skiing, and cooking in his spare time.
-- Person 4: one sentence about you!
+- Tingwen Hua: A data science student who loves handcrafting and travelling.
 
 ## Describe your topic/interest in about 150-200 words
 
