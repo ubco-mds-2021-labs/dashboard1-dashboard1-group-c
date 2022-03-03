@@ -3,6 +3,8 @@ import dash_bootstrap_components as dbc
 from flask_caching import Cache
 import flask
 
+from layout.layout import layout
+
 
 server = flask.Flask(__name__)
 app = Dash(
@@ -17,10 +19,10 @@ cache = Cache(app.server, config={
 })
 
 if __name__ == "__main__":
-    layout = dbc.Container(
-        [
-            html.H1("Insert Title Here...")
-        ]
-    )
+    # layout = dbc.Container(
+    #     [
+    #         html.H1("Insert Title Here...")
+    #     ]
+    # )
     app.layout = layout
     app.run_server(debug=True, host="localhost")
