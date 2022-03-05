@@ -2,7 +2,7 @@ from dash import html
 import dash_bootstrap_components as dbc
 
 from .sidebar.sidebar import sidebar
-
+from .map.map import map
 
 CONTENT_STYLE = {
     "margin-left": "10rem",
@@ -15,4 +15,5 @@ content = html.Div(
     id="dashboard-main",
     style=CONTENT_STYLE
 )
-layout = dbc.Container([sidebar, content])
+layout = dbc.Container([sidebar, content, map])
+

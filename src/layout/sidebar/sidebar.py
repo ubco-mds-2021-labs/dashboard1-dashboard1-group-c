@@ -42,10 +42,12 @@ sidebar = html.Div(
                     id="province-selector"
                 ),
                 html.H5("Year"),
-                dcc.Dropdown(
-                    [str(x) for x in range(1990, 2021)],
-                    id="year-selector"
-                )
+                # dcc.Dropdown(
+                #     [str(x) for x in range(1990, 2021)],
+                #     id="year-selector"
+                # ),
+                dcc.Slider(1990,2021, 1, value=1990, marks=None,
+                           tooltip={"placement": "bottom", "always_visible": True},id="year-selector")
             ],
             vertical=True
         )

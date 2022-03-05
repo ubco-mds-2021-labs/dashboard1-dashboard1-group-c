@@ -31,3 +31,7 @@ tenacity==8.0.1
 toolz==0.11.2
 tornado==6.1
 Werkzeug==2.0.3
+geopandas==0.10.2
+
+
+
