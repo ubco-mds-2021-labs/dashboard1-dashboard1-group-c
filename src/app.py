@@ -2,6 +2,8 @@ from dash import Dash, html
 import dash_bootstrap_components as dbc
 from flask_caching import Cache
 import flask
+from dash.dependencies import Input, Output
+from layout.total_capacity.totalCapacity import plot_altair
 
 from layout.layout import layout
 
@@ -24,5 +26,13 @@ if __name__ == "__main__":
     #         html.H1("Insert Title Here...")
     #     ]
     # )
-    app.layout = layout
+    app.layout = layout  
+    
+    
+    #Callback for total capacity bar graph
+    @app.callback(
+        Output('bar', 'srcDoc'),
+        Input('province-selector', 'value'))
+    def update_output(ycol):
+        return plot_altair(ycol)
     app.run_server(debug=True, host="localhost")
