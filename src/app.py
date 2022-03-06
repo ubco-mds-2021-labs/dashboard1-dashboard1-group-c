@@ -2,8 +2,10 @@ from dash import Dash, html
 import dash_bootstrap_components as dbc
 from flask_caching import Cache
 import flask
-
+from dash.dependencies import Input, Output
 from layout.layout import layout
+from .sidebar.sidebar import sidebar
+from .models.models import plot_model
 
 
 server = flask.Flask(__name__)
@@ -25,4 +27,12 @@ if __name__ == "__main__":
     #     ]
     # )
     app.layout = layout
+    
+    #Callback for Model by Province Pie Chart
+    @app.callback(
+        Output('model', 'srcDoc'),
+        Input('province-selector', 'value'))
+    def update_output(choice):
+        return plot_altair(choice)
+    
     app.run_server(debug=True, host="localhost")
