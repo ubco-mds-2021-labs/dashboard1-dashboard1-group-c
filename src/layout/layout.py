@@ -1,8 +1,7 @@
 from dash import html
 import dash_bootstrap_components as dbc
-from dash.dependencies import Input, Output
 from .sidebar.sidebar import sidebar
-from .models.models import plot_model
+from .models.models import pie_chart
 
 
 CONTENT_STYLE = {
@@ -11,8 +10,14 @@ CONTENT_STYLE = {
     "padding": "2rem 1rem",
 }
 
-content = html.Div(
-    [html.H1("Count Models by Province"),plot_model], 
+#I_FRAME_STYLE = {
+   # "width": "100%",
+   # "height": "600px"
+#}
+content = html.Div([
+    html.H1("Title..."),
+    html.Iframe(srcDoc=pie_chart(), id='model',style={'border-width': '0', 'width': '100%', 'height': '400px'})
+    ],
     id="dashboard-main",
     style=CONTENT_STYLE
 )
