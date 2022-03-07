@@ -12,6 +12,5 @@ def load_data():
     data = data.drop(['Commissioning date', 'later_date'], axis = 1)
     data = data.rename(columns = {'earlier_date' : 'Commissioning date'})
     data['Commissioning date'] = pd.to_numeric(data['Commissioning date'])
-    # data['Commissioning date'] = pd.to_datetime(data['Commissioning date'], format = "%Y")
 
     return data

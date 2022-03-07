@@ -12,7 +12,7 @@ CONTENT_STYLE = {
 }
 
 I_FRAME_STYLE = {
-    "width": "50%",
+    "width": "64%",
     "height": "400px"
 }
 
