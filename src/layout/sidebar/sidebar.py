@@ -1,29 +1,9 @@
 from dash import html, dcc
 import dash_bootstrap_components as dbc
 
-
-SIDEBAR_STYLE = {
-    "position": "fixed",
-    "top": 0,
-    "left": 0,
-    "bottom": 0,
-    "width": "16rem",
-    "padding": "2rem 1rem",
-    "background-color": "#f8f9fa",
-}
-
-sidebar_header = dbc.Row(
-    dbc.Col(html.H3("Controls"))
-)
-
-sidebar = html.Div(
-    [
-        sidebar_header,
-        html.Hr(),
-        dbc.Nav(
-            [
-                html.H5("Province"),
-                dcc.Dropdown(
+# Province selector
+province=dcc.Dropdown(
+                    
                     {
                         "Alberta": "Alberta",
                         "British Columbia": "British Columbia",
@@ -40,15 +20,82 @@ sidebar = html.Div(
                     }, 
                     value="Alberta",
                     id="province-selector"
-                ),
-                html.H5("Year"),
-                dcc.Dropdown(
+                )
+
+# Year selector
+year=dcc.Dropdown(
                     [str(x) for x in range(1990, 2021)],
                     id="year-selector"
                 )
-            ],
-            vertical=True
-        )
-    ],
-    style=SIDEBAR_STYLE
-)
+
+# Description
+description = dbc.Col(class_name="bar",style={'backgroundColor':'grey','color':'black'},
+                  children=[dbc.Row(
+                      dbc.Col("This is a data visualization ",
+                                    style={"font_family": "cursive","font-size":"20px","padding-left": "20px","padding-right": "20px",}),
+                      ),
+                      dbc.Row(
+                      dbc.Col("app that allows members ",
+                                    style={"font-size":"20px","padding-left": "20px","padding-right": "20px",}),
+                      ),
+                      dbc.Row(
+                      dbc.Col("of Natural Resources Canada ",
+                                    style={"font-size":"20px","padding-left": "20px","padding-right": "20px",}),
+                      ),
+                      
+                      dbc.Row(
+                        dbc.Col(" planning committees to visually",
+                                    style={"font-size":"20px","padding-left": "20px","padding-right": "20px"}),
+                      ),
+                      
+                      dbc.Row(
+                        dbc.Col(" explore a dataset outlining",
+                                    style={"font-size":"20px","padding-left": "20px","padding-right": "20px"}),
+                      ),
+                      dbc.Row(
+                        dbc.Col("windpower capacity in Canada.",
+                                    style={"font-size":"20px","padding-left": "20px","padding-right": "20px"}),
+                      ),
+                      
+                
+                    html.Br(),
+                    dbc.Row(
+                        dbc.Col("Choose the control above",
+                                    style={"font-size":"20px","padding-left": "20px","padding-right": "20px"}),
+                      ),
+                    dbc.Row(
+                        dbc.Col("to change your selection.",
+                                    style={"font-size":"20px","padding-left": "20px","padding-right": "20px"}),
+                      ),
+                    html.Br(),
+                    html.Br(),
+                    html.Br(),
+                    html.Br(),
+                    html.Br(),
+                    html.Br(),
+                    html.Br(),
+                    html.Br(),
+],)
+
+#Sidebar
+sidebar = dbc.Col(class_name="bar",style={'backgroundColor':'grey','color':'black'},
+                  children=[
+                      dbc.Row("WIND TURBINES",class_name="title",
+                                    style={"font-size":"40px","padding-left": "20px","padding-right": "30px","padding-top": "20px"}),
+ 
+html.Br(),
+html.Br(),
+dbc.Label("CONTROLS: ",class_name="sub_title",
+          style={"font-size":"30px","padding-left": "20px","padding-right": "20px","padding-top": "20px"}),
+html.Br(),
+html.Br(),
+dbc.Row(province, style={"font-size":"15px","padding-left": "20px","padding-right": "20px","padding-top": "10px"}),
+html.Br(),
+dbc.Row(year, style={"font-size":"15px","padding-left": "20px","padding-right": "20px","padding-top": "20px"}),
+html.Br(),
+html.Br(),
+],)
+
+
+
+
