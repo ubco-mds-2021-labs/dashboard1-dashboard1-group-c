@@ -1,10 +1,11 @@
-from dash import Dash, html
+from dash import Dash
 import dash_bootstrap_components as dbc
 from flask_caching import Cache
 import flask
 from dash.dependencies import Input, Output
-from layout.layout import layout
 
+from layout.total_capacity.total_capacity import plot_capacity
+from layout.layout import layout
 from layout.models.models import pie_chart
 
 
@@ -20,15 +21,3 @@ cache = Cache(app.server, config={
     "CACHE_TYPE": "filesystem",
     "CACHE_DIR": "cache-directory"
 })
-
-
-#Callback for Model by Province Pie Chart
-@app.callback(
-    Output('model', 'srcDoc'),
-    Input('province-selector', 'value'))
-
-def update_output(selector):
-        return pie_chart(selector)
-
-if __name__ == "__main__":    
-    app.run_server(debug=True, host="localhost")
