@@ -23,7 +23,7 @@ content = html.Div(
         html.H1("Wind Turbines in Canada"),
         html.Iframe(srcDoc=line_chart(), style=I_FRAME_STYLE, id="time-plot"),
         plot_totalCapacity,
-        html.Iframe(srcDoc=pie_chart(), id='model',style={'border-width': '0', 'width': '100%', 'height': '400px'})
+        html.Iframe(srcDoc=pie_chart(), id='model',style={'border-width': '0', 'width': '100%', 'height': '400px'}),
         html.Hr()
     ], 
     id="dashboard-main",

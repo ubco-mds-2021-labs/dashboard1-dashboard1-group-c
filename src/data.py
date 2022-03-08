@@ -14,3 +14,8 @@ def load_data():
     data['Commissioning date'] = pd.to_numeric(data['Commissioning date'])
 
     return data
+
+def load_raw_data():
+    root_dir = pathlib.Path(__file__).parent.parent
+    file_path = root_dir.joinpath("data/WindTurbineDatabase.xlsx")
+    return pd.read_excel(file_path, index_col = 0)
