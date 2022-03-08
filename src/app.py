@@ -2,6 +2,8 @@ from dash import Dash
 import dash_bootstrap_components as dbc
 from flask_caching import Cache
 import flask
+from dash.dependencies import Input, Output
+from layout.total_capacity.totalCapacity import plot_altair
 
 from layout.layout import layout
 
