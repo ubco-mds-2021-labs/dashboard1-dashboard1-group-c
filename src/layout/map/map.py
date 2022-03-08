@@ -40,9 +40,15 @@ def plot_province(prov,year):
     return alt_chart.to_html()
 
 CONTENT_STYLE = {
-'border-width': '0', 'width': '200%', 'height': '400px','align-items' : 'end'
+    'border-width': '0', 
+    'width': '200%', 
+    'height': '400px',
+    'align-items': 'end'
 }    
 
 # layout component 
-map = html.Iframe(id='altair_map',srcDoc=plot_province(prov = "British Columbia", year=1990),
-style=CONTENT_STYLE)
+map = html.Iframe(
+    id='altair_map',
+    srcDoc=plot_province(prov = "British Columbia", year=1990),
+    style=CONTENT_STYLE
+)

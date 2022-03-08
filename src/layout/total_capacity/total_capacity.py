@@ -31,7 +31,10 @@ def plot_capacity(province=None):
 plot_totalCapacity = html.Iframe(
     id='capacity-plot',
     style={
-        'border-width': '0', 'width': '250%','height': '400px', "padding-left": "20px"
+        'border-width': '0', 
+        'width': '250%',
+        'height': '400px', 
+        "padding-left": "20px"
     },
     srcDoc=plot_capacity(province=None)
 )
