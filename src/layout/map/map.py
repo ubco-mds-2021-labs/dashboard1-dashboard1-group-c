@@ -40,11 +40,7 @@ def plot_province(prov,year):
     return alt_chart.to_html()
 
 CONTENT_STYLE = {
-    "margin-left": "10rem",
-    "margin-right": "2rem",
-    "padding": "2rem 1rem",
-    'width': '100%', 
-    'height': '400px',
+'border-width': '0', 'width': '200%', 'height': '400px','align-items' : 'end'
 }    
 
 # layout component 
