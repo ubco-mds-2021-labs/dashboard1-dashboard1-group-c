@@ -2,12 +2,12 @@ from dash import html
 import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output
 from .sidebar.sidebar import sidebar
-from .total_capacity.totalCapacity import plot_totalCapacity
+from .total_capacity.total_capacity import plot_totalCapacity
 from .time_viz.time_viz import line_chart
 
 
 CONTENT_STYLE = {
-    "margin-left": "20rem",
+    "margin-left": "10rem",
     "margin-right": "2rem",
     "padding": "2rem 1rem",
 }

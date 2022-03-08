@@ -3,11 +3,14 @@ from dash import html
 import altair as alt
 import pandas as pd
 
+from data import load_data
+
 #Reading data
-wind = pd.read_excel('../data/WindTurbineDatabase.xlsx', index_col = 0)
+# wind = pd.read_excel('../data/WindTurbineDatabase.xlsx', index_col = 0)
+wind = load_data()
 
 #Function for creating bar graph for total capacity as per province
-def plot_altair(ycol='Alberta'):  
+def plot_capacity(province=None):  
     
     province_capacity = wind.groupby("Province/Territory", as_index=False).aggregate("sum").sort_values(by="Turbine rated capacity (kW)", ascending=False)
     province_capacity["Turbine rated capacity (kW)"] /= 1000
@@ -17,7 +20,7 @@ def plot_altair(ycol='Alberta'):
         x=alt.X("Total Capacity (MW)"),
         y=alt.Y("Province", sort=province_capacity["Province"].to_list()),
         color=alt.condition(
-            alt.datum.Province == ycol,  
+            alt.datum.Province == province,  
             alt.value('red'),     
             alt.value('lightgrey')),
          tooltip=["Province","Total Capacity (MW)","Total project capacity (MW)"]
@@ -25,11 +28,15 @@ def plot_altair(ycol='Alberta'):
     return chart.to_html()
 
 #Plot to save the output of the total capacity bar graph
-plot_totalCapacity=html.Iframe(id='bar',
-                                    style={'border-width': '0', 
-                                            'width': '100%', 
-                                            'height': '400px', 
-                                            "margin-left": "20rem",
-                                            "margin-right": "2rem",
-                                            "padding": "2rem 1rem",},
-                                    srcDoc=plot_altair(ycol='Alberta'))
+plot_totalCapacity = html.Iframe(
+    id='capacity-plot',
+    style={
+        'border-width': '0', 
+        'width': '100%', 
+        'height': '400px', 
+        "margin-left": "20rem",
+        "margin-right": "2rem",
+        "padding": "2rem 1rem"
+    },
+    srcDoc=plot_capacity(province=None)
+)

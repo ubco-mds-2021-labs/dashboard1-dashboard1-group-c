@@ -38,7 +38,7 @@ sidebar = html.Div(
                         "Saskatchewan": "Saskatchewan",
                         "Yukon": "Yukon"
                     }, 
-                    value="Alberta",
+                    value=None,
                     id="province-selector"
                 ),
                 html.H5("Year"),

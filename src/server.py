@@ -1,5 +1,6 @@
 from app import app, server
 from layout.time_viz.time_viz_callbacks import update_cumulative_count
+from layout.total_capacity.total_capacity_callbacks import update_capacity
 
 
 if __name__ == "__main__":
