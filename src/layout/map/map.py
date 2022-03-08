@@ -1,39 +1,40 @@
 from dash import html, dcc
 import dash_bootstrap_components as dbc
 import geopandas as gpd
-import pandas as pd
 import altair as alt
+
+from data import load_geo_data
+
 alt.data_transformers.enable('data_server')
 alt.data_transformers.disable_max_rows()
 
 
 # get the map shapefile from statcan
 canada_df = gpd.read_file("https://www12.statcan.gc.ca/census-recensement/2011/geo/bound-limit/files-fichiers/gpr_000a11a_e.zip")
-
-# Data Wrangling 
-wind = pd.read_excel('../data/WindTurbineDatabase.xlsx', index_col = 0)
-wind[['earlier_date', 'later_date']] = wind['Commissioning date'].str.split('/', 1, expand = True)
-wind.earlier_date.fillna(wind['Commissioning date'], inplace=True)
-wind = wind.drop(['Commissioning date', 'later_date'], axis = 1)
-wind = wind.rename(columns = {'earlier_date' : 'Commissioning date'})
-wind['Commissioning date'] = pd.to_numeric(wind['Commissioning date'])
+wind = load_geo_data()
 
 # function for altair plot
 def plot_province(prov,year):
-    province = canada_df[canada_df["PRENAME"]==prov]
+    if prov is None:
+        url_geojson = 'https://raw.githubusercontent.com/johan/world.geo.json/master/countries/CAN.geo.json'
+        region = alt.Data(url=url_geojson, format=alt.DataFormat(property='features',type='json'))
+    else:
+        region = canada_df[canada_df["PRENAME"]==prov]
     
-    base = alt.Chart(province).mark_geoshape(
-    stroke='gray', 
-    fill=None
-    )
+    base = alt.Chart(region).mark_geoshape(
+        stroke='gray', 
+        fill=None
+    ).project('albers')
     
-    wind_province = wind[wind["Province/Territory"]==prov]
-    wind_province = wind[(wind["Province/Territory"]==prov) & (wind["Commissioning date"]<=year)]
+    if prov is None:
+        wind_province = wind[wind["Commissioning date"] <= year]
+    else:
+        wind_province = wind[wind["Province/Territory"] == prov]
+        wind_province = wind[(wind["Province/Territory"] == prov) & (wind["Commissioning date"] <= year)]
     pts = alt.Chart(wind_province).mark_circle(color='red', opacity=0.3).encode(
-    latitude='Latitude',
-    longitude='Longitude'
+        latitude='Latitude',
+        longitude='Longitude'
     )
-
 
     alt_chart = base + pts
     return alt_chart.to_html()
