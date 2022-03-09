@@ -13,7 +13,7 @@ Link to access our deployed app:
 
 - LingXiang Zou: https://data551-group-c-dashboard.herokuapp.com
 
-- Tingwen Hua:
+- Tingwen Hua: https://project551dashboard.herokuapp.com/
 
 Also, the dashboard will let the user know the number of different models in a particular province, locations of the turbines in a particular province.
 
