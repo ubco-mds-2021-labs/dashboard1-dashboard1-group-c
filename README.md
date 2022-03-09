@@ -1,12 +1,11 @@
+# Wind Turbines (Group C)
 
-# Wind Turbines in Canada (Group C)
-You can visit the app directly by clicking here → → → [Deployed app](https://data551-group-c-dashboard.herokuapp.com)
-
-## Goal
 - We are planning to create a dashboard which will record the number of turbines in different provinces of Canada. It will answer two of our major research questions which are as mentioned below:
 
 1. Number of wind turbines in Canada province vise
 2. Number of wind turbines installed on yearly basis
+
+Link to access our app: https://windturbineapp.herokuapp.com/
 
 Also, the dashboard will let the user know the number of different models in a particular province, locations of the turbines in a particular province.
 
@@ -17,7 +16,7 @@ Also, the dashboard will let the user know the number of different models in a p
 - Sean Casey: Software developer and data science student who likes biking, skiing, and cooking in his spare time.
 - Tingwen Hua: A data science student who loves handcrafting and travelling.
 
-## Describe your topic/interest in about 150-200 words
+## Description
 
 The growth and development of renewable energy sources as replacements for fossil fuels is an important aspect of combatting climate change. In order to develop Canada's national strategy for renewable energy production in Canada, it is important to understand the current situation and the history of existing wind power production in Canada. To accomplish this, we propose building a data visualization app that allows members of Natural Resources Canada planning committees to visually explore a dataset outlining existing windpower capacity in Canada. Our dashboard will show the different variables that contribute to the overall existing windpower capacity within Canada, and allow the user to filter on different variables to explore different aspects of the data.   
 
@@ -29,7 +28,7 @@ The dashboard will include different visualizations like bar chart, map, line ch
 
 Different visualizations and a small summary corresponding to them are as mentioned below:
 
-**BAR GRAPH FOR MODELS IN SELECTED PROVINCE:** This will display the total number of different models of turbines in the selected province.
+**PIE CHART FOR MODELS IN SELECTED PROVINCE:** This will display the total number of different models of turbines in the selected province.
 
 **TURBINE COUNT AS PER YEAR:** This is a line graph which will display the total number of turbines which have changed over the years for a particular province.
 
@@ -37,13 +36,25 @@ Different visualizations and a small summary corresponding to them are as mentio
 
 **TOTAL CAPACITY OF TURBINES** This is a bar graph which will display the total capacity of turbines for different provinces in Canada.
 
-<img src ="dashboard.jpg" width="800px" height="800px">
+![](assets/dashboard.gif)
 
 
-## Describe your dataset in about 150-200 words
+## Description of Data set
 
 We will be visualizing a dataset of approximately 6,500 existing wind power turbines in Canada. Each turbine entry has 13 different numerical and categorical variables that describe the location within Canada (province/territory, latitude, longitude), the project to which the turbine belongs (project name, total project capacity, number within project), and the turbine itself (turbine id, rated 
 capacity, rotor diameter, hub height, manufacturer, model, and commissioning year). Using this data, we will be able to calculate new aggregated variable such as total power capacity per province, and yearly total cumulative turbine count. 
+
+# Note to those who are interesting in helping us develop our dashboard
+
+If someone wants to contribute in our dashboard feel free to do so. You can reach out to us via emails. Contributors are always welcome and you can access our application by following the simple steps are as mentioned below:
+
+- Our Git repository is public so you can directly clone it using the link: 
+- We have created a virtual environment, so install that as well. Name of our virtual environment is 'venv'.
+- Our main code runs from server.py file. So, open the terminal on your local machine and go to the folder 'src'.
+- Run the command 'python server.py' there.
+- Open the link http://localhost:8050/. On this link, you can see the dashboard for better understanding.
+
+We would like contributors to help us in making the app more advanced by suggesting changes with respect to the predictions about the wind turbines in future.
 
 ## Acknowledgements and references 
 
