@@ -44,7 +44,7 @@ Different visualizations and a small summary corresponding to them are as mentio
 We will be visualizing a dataset of approximately 6,500 existing wind power turbines in Canada. Each turbine entry has 13 different numerical and categorical variables that describe the location within Canada (province/territory, latitude, longitude), the project to which the turbine belongs (project name, total project capacity, number within project), and the turbine itself (turbine id, rated 
 capacity, rotor diameter, hub height, manufacturer, model, and commissioning year). Using this data, we will be able to calculate new aggregated variable such as total power capacity per province, and yearly total cumulative turbine count. 
 
-# Note to those who are interesting in helping us develop our dashboard
+## Note to those who are interesting in helping us develop our dashboard
 
 If someone wants to contribute in our dashboard feel free to do so. You can reach out to us via emails. Contributors are always welcome and you can access our application by following the simple steps are as mentioned below:
 
