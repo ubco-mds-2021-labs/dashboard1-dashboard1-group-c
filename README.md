@@ -5,7 +5,15 @@
 1. Number of wind turbines in Canada province vise
 2. Number of wind turbines installed on yearly basis
 
-Link to access our app: https://windturbineapp.herokuapp.com/
+Link to access our deployed app:
+
+- Aishwarya Sharma : https://windturbineapp.herokuapp.com/
+
+- Sean Casey: https://data551-dash-app.herokuapp.com/
+
+- LingXiang Zou: https://data551-group-c-dashboard.herokuapp.com
+
+- Tingwen Hua:
 
 Also, the dashboard will let the user know the number of different models in a particular province, locations of the turbines in a particular province.
 
