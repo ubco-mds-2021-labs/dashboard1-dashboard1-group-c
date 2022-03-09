@@ -6,7 +6,6 @@ import pandas as pd
 from data import load_data
 
 #Reading data
-# wind = pd.read_excel('../data/WindTurbineDatabase.xlsx', index_col = 0)
 wind = load_data()
 
 #Function for creating bar graph for total capacity as per province

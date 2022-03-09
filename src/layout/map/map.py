@@ -5,7 +5,6 @@ import altair as alt
 
 from data import load_geo_data
 
-alt.data_transformers.enable('data_server')
 alt.data_transformers.disable_max_rows()
 
 
