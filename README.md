@@ -1,5 +1,8 @@
-# Wind Turbines in Canada (Group C)
 
+# Wind Turbines in Canada (Group C)
+You can visit the app directly by clicking here → → → [Deployed app](https://data551-group-c-dashboard.herokuapp.com)
+
+## Goal
 - We are planning to create a dashboard which will record the number of turbines in different provinces of Canada. It will answer two of our major research questions which are as mentioned below:
 
 1. Number of wind turbines in Canada province vise
