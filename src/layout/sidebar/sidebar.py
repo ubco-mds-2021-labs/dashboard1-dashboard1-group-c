@@ -25,7 +25,7 @@ year = dcc.Slider(
     1990, 
     2021, 
     1, 
-    value=1990, 
+    value=2021, 
     marks=None,
     tooltip={"placement": "bottom", "always_visible": True}, 
     id="year-selector"

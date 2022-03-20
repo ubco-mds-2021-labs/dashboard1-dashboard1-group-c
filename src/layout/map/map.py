@@ -2,37 +2,49 @@ from dash import html, dcc
 import dash_bootstrap_components as dbc
 import geopandas as gpd
 import altair as alt
-
+import pathlib
 from data import load_geo_data
 
 alt.data_transformers.disable_max_rows()
 
 
-# get the map shapefile from statcan
-canada_df = gpd.read_file("https://www12.statcan.gc.ca/census-recensement/2011/geo/bound-limit/files-fichiers/gpr_000a11a_e.zip")
+# get the map and wind data
+canada_df =  gpd.read_file("../data/canada.geojson")
 wind = load_geo_data()
 
 # function for altair plot
 def plot_province(prov,year):
-    if prov is None:
-        url_geojson = 'https://raw.githubusercontent.com/johan/world.geo.json/master/countries/CAN.geo.json'
-        region = alt.Data(url=url_geojson, format=alt.DataFormat(property='features',type='json'))
-    else:
-        region = canada_df[canada_df["PRENAME"]==prov]
+    """
+    A function that plot the location of wind turbine on a geographic map.
     
-    base = alt.Chart(region).mark_geoshape(
-        stroke='gray', 
-        fill=None
-    ).project('albers')
+    Parameters:
+    -----------
+    prov: the 12 Canadian provinces/territories.
+    year: range from (1990 - 2021)
+    
+    Returns:
+    --------
+    A altair plot in html format for Dash
+    """
+    
+    if prov is None:
+        region = canada_df
+    else:
+        region = canada_df[canada_df["name"]==prov]
+    
+    # geographic plot
+    base = alt.Chart(region,title='Geographic location of the wind turbine').mark_geoshape(stroke="white").encode(color=alt.Color('name',legend=None))
     
     if prov is None:
         wind_province = wind[wind["Commissioning date"] <= year]
     else:
         wind_province = wind[wind["Province/Territory"] == prov]
         wind_province = wind[(wind["Province/Territory"] == prov) & (wind["Commissioning date"] <= year)]
-    pts = alt.Chart(wind_province).mark_circle(color='red', opacity=0.3).encode(
-        latitude='Latitude',
-        longitude='Longitude'
+    
+    # location plot
+    pts = alt.Chart(wind_province).mark_circle(color='black', opacity=0.3,size = 5).encode(
+    latitude='Latitude',
+    longitude='Longitude'
     )
 
     alt_chart = base + pts
