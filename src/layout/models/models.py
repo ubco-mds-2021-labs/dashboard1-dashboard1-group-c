@@ -1,25 +1,35 @@
 import altair as alt
+import pandas as pd
 
 from data import load_raw_data
 
 
 wind = load_raw_data()
 
-def pie_chart(selector='Alberta'):  
-    province_model = wind.groupby(["Province/Territory","Model"], as_index=False).count().iloc[:, 0:3]
-    province_model = province_model.rename(columns={"Project name":"Total"})
+def bar_chart(selector = None):
+    """
+    Function returns a bar chart of model count in each province
+    
+    Args:
+        Selector: province. Defaults to None.
+
+    Returns:
+        A altair plot in html format for Dash
+    """
     if selector is not None:
+        province_model = wind.groupby(["Province/Territory","Model"], as_index=False).count().iloc[:, 0:3]
+        province_model = province_model.rename(columns={"Project name":"Total"})
         selected = province_model[province_model["Province/Territory"] == selector]
     else:
-        selected = province_model
+        province_model = wind.groupby(["Model"], as_index=False).count().iloc[0:5, 0:3]
+        selected = province_model.rename(columns={"Project name":"Total"})
         selector = "Canada"
+        
     base = alt.Chart(selected, title=f'Models for {selector}').encode(
-        theta=alt.Theta("Total:Q", stack=True), 
-        color=alt.Color("Model:N")
+        x = 'Model',
+        y = 'Total'
     )
-    pie = base.mark_arc(outerRadius=160,innerRadius=80)
-    text = base.mark_text(radius=190, size=10).encode(text="Model:N")
+    chart = base.mark_bar()
 
-    chart = pie + text
     return chart.to_html()
 

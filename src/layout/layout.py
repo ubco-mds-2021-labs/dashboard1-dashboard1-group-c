@@ -3,7 +3,7 @@ import dash_bootstrap_components as dbc
 
 from .sidebar.sidebar import sidebar, description
 from .map.map import map
-from .models.models import pie_chart
+from .models.models import bar_chart
 from .total_capacity.total_capacity import plot_totalCapacity
 from .time_viz.time_viz import line_chart
 
@@ -16,7 +16,7 @@ row1 = html.Div(
                 dbc.Col(plot_totalCapacity, width=5),
                 dbc.Col(
                     html.Iframe(
-                        srcDoc=pie_chart(), 
+                        srcDoc=bar_chart(), 
                         id='model', 
                         style={
                             'border-width': '0', 
