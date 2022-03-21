@@ -36,7 +36,7 @@ The dashboard will include different visualizations like bar chart, map, line ch
 
 Different visualizations and a small summary corresponding to them are as mentioned below:
 
-**PIE CHART FOR MODELS IN SELECTED PROVINCE:** This will display the total number of different models of turbines in the selected province.
+**BAR CHART FOR MODELS IN SELECTED PROVINCE:** This will display the total number of different models of turbines in the selected province.
 
 **TURBINE COUNT AS PER YEAR:** This is a line graph which will display the total number of turbines which have changed over the years for a particular province.
 
@@ -44,7 +44,7 @@ Different visualizations and a small summary corresponding to them are as mentio
 
 **TOTAL CAPACITY OF TURBINES** This is a bar graph which will display the total capacity of turbines for different provinces in Canada.
 
-![](assets/dashboard.gif)
+![](assets/dashboard_new.gif)
 
 
 ## Description of Data set
