@@ -10,6 +10,17 @@ wind = load_data()
 
 #Function for creating bar graph for total capacity as per province
 def plot_capacity(province=None):  
+    """
+    A function that displays the total capacity of wind turbines as per the province.
+    
+    Parameters:
+    -----------
+    prov: the 12 Canadian provinces/territories.
+    
+    Returns:
+    --------
+    A altair bar chart in html format for Dash
+    """
     
     province_capacity = wind.groupby("Province/Territory", as_index=False).aggregate("sum").sort_values(by="Turbine rated capacity (kW)", ascending=False)
     province_capacity["Turbine rated capacity (kW)"] /= 1000
