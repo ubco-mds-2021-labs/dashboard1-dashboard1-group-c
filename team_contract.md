@@ -35,3 +35,64 @@ The following team contract describes a working document that identifies how thi
 * Minor decisions (e.g. Plot type, color, label, etc) can be made, but should be mentioned during the meeting.
 * Any decision conflicts will be discussed/resolved in a group setting as required.
 
+
+
+## Final Reflection on Workload Distribution
+
+In this section we will ask you to self-report the workload distribution to various categories of tasks.
+For each of the categories, we want you to report the approximate workload distribution, split by the milestone.
+
+Here are the tables you are expected to complete (the first one is pre-filled in so you can see what we're expecting):
+
+### Milestone 1
+
+| Category           | Sean Casey  | Aishwarya Sharma | Tingwen Hua | Ling Xiang Zou |
+|--------------------|---------------|---------------|---------------|---------------|
+| Repository Setup   | -             | -             | -             | -             |
+| Sketch             | -             | 100%          | -             | -             |
+| Documentation      | 30%           |               |               |               |
+| Project Management | 50%           |               |               |               |
+| Troubleshooting    | -             | -             | -             | -             |
+
+Brief notes/explanations (optional):
+- No troubleshooting was needed for Milestone 1
+- Repository setup was done automatically (nothing to do)
+
+### Milestone 2
+
+| Category                  | Sean Casey  | Aishwarya Sharma | Tingwen Hua | Ling Xiang Zou |
+|---------------------------|---------------|---------------|---------------|---------------|
+| Documentation/Reflection  | 10%           |               |               |               |
+| Writing new code          | 25%           | 25%           | 25%           | 25%           |
+| Code Reviews/editing      | 100%          |               |               |               |
+| Project Management        | 60%           |               |               |               |
+| Testing & Troubleshooting | 25%           | 25%           | 25%           | 25%           |
+
+Brief notes/explanations (optional):
+- Sean handled all the pull request merging since he chose to implement a proper file system structure here instead of in Milestone 4
+- Aishwarya handled most of the documentation
+
+### Milestone 3
+
+| Category                  | Sean Casey  | Aishwarya Sharma | Tingwen Hua | Ling Xiang Zou |
+|---------------------------|---------------|---------------|---------------|---------------|
+| Documentation/Reflection  | 10%           |               |               |               |
+| Writing new code          | 25%           | 25%           | 25%           | 25%           |
+| Code Reviews/editing      | 100%          |               |               |               |
+| Project Management        | 60%           |               |               |               |
+| Testing & Troubleshooting | 25%           | 25%           | 25%           | 25%           |
+
+Brief notes/explanations (optional):
+
+### Milestone 4
+
+| Category                  | Sean Casey  | Aishwarya Sharma | Tingwen Hua | Ling Xiang Zou |
+|---------------------------|---------------|---------------|---------------|---------------|
+| Documentation/Reflection  | 25%           |               |               |               |
+| Writing new code          | 25%           | 25%           | 25%           | 25%           |
+| Code Reviews/editing      | 100%          |               |               |               |
+| Project Management        | 25%           | 25%           | 25%           | 25%           |
+| Testing & Troubleshooting | 25%           | 25%           | 25%           | 25%           |
+
+Brief notes/explanations (optional):
+- Documentation for this milestone consisted mostly of writing code comments and docstrings
