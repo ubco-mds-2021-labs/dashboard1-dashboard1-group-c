@@ -2,22 +2,12 @@
 
 - We are planning to create a dashboard which will record the number of turbines in different provinces of Canada. It will answer two of our major research questions which are as mentioned below:
 
-1. Number of wind turbines in Canada province vise
+1. Number of wind turbines in Canada province wise
 2. Number of wind turbines installed on yearly basis
 
 Link to access our deployed app:
 
-- Aishwarya Sharma : https://windturbineapp.herokuapp.com/
-
-  Milestone 4 : https://windturbine-final.herokuapp.com/
-
-- Sean Casey: https://data551-dash-app.herokuapp.com/
-
-- LingXiang Zou: https://data551-group-c-dashboard.herokuapp.com
-  
-  Milestone 4: https://ubc-final-dashboard.herokuapp.com
-
-- Tingwen Hua: https://project551dashboard.herokuapp.com/
+- GitHub-linked Heroku app: https://data551-groupc-milestone4.herokuapp.com/
 
 Also, the dashboard will let the user know the number of different models in a particular province, locations of the turbines in a particular province.
 
