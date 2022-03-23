@@ -3,10 +3,19 @@ import pandas as pd
 import geopandas as gpd
 
 
-def load_data():
-    root_dir = pathlib.Path(__file__).parent.parent
-    file_path = root_dir.joinpath("data/WindTurbineDatabase.xlsx")
-    data = pd.read_excel(file_path)
+def load_data(index: bool = False) -> pd.DataFrame:
+    """
+    Function for loading and cleaning data in a usable format
+
+    Parameters:
+    -----------
+    index: boolean indicating whether to load data with a specified index column
+
+    Returns:
+    --------
+    A pandas DataFrame object containing cleaned data
+    """
+    data = load_raw_data(index=index)
 
     data[['earlier_date', 'later_date']] = data['Commissioning date'].str.split('/', 1, expand = True)
     data.earlier_date.fillna(data['Commissioning date'], inplace=True)
@@ -16,18 +25,34 @@ def load_data():
 
     return data
 
-def load_raw_data():
+
+def load_raw_data(index: bool = True) -> pd.DataFrame:
+    """
+    Function for loading raw data 
+
+    Parameters:
+    -----------
+    index: boolean indicating whether to load data with indexed column
+
+    Returns:
+    --------
+    A pandas DataFrame object containing raw data
+    """
     root_dir = pathlib.Path(__file__).parent.parent
     file_path = root_dir.joinpath("data/WindTurbineDatabase.xlsx")
-    return pd.read_excel(file_path, index_col = 0)
+    if index:
+        return pd.read_excel(file_path, index_col = 0)
+    return pd.read_excel(file_path)
 
-def load_geo_data():
-    # Data Wrangling 
-    # wind = pd.read_excel('../data/WindTurbineDatabase.xlsx', index_col = 0)
-    wind = load_raw_data()
-    wind[['earlier_date', 'later_date']] = wind['Commissioning date'].str.split('/', 1, expand = True)
-    wind.earlier_date.fillna(wind['Commissioning date'], inplace=True)
-    wind = wind.drop(['Commissioning date', 'later_date'], axis = 1)
-    wind = wind.rename(columns = {'earlier_date' : 'Commissioning date'})
-    wind['Commissioning date'] = pd.to_numeric(wind['Commissioning date'])
-    return wind
+
+def load_geo_data() -> gpd.GeoDataFrame:
+    """
+    Function for loading geographical data for rendering map
+
+    Returns:
+    --------
+    A geopandas GeoDataFrame object containing Canadian map data
+    """
+    root_dir = pathlib.Path(__file__).parent.parent
+    file_path = root_dir.joinpath("data/canada.geojson")
+    return gpd.read_file(file_path)

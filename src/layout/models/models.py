@@ -1,9 +1,9 @@
 import altair as alt
 
-from data import load_raw_data
+from data import load_data
 
 
-wind = load_raw_data()
+wind = load_data(index=True)
 
 def pie_chart(selector='Alberta'):  
     province_model = wind.groupby(["Province/Territory","Model"], as_index=False).count().iloc[:, 0:3]

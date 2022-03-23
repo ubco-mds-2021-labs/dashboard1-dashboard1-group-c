@@ -1,7 +1,6 @@
 #Imports
 from dash import html
 import altair as alt
-import pandas as pd
 
 from data import load_data
 
@@ -9,9 +8,9 @@ from data import load_data
 wind = load_data()
 
 #Function for creating bar graph for total capacity as per province
-def plot_capacity(province=None):  
+def plot_capacity(province: str = None) -> str:  
     """
-    A function that displays the total capacity of wind turbines as per the province.
+    A function that displays the total capacity of wind turbines per province.
     
     Parameters:
     -----------
@@ -19,14 +18,17 @@ def plot_capacity(province=None):
     
     Returns:
     --------
-    A altair bar chart in html format for Dash
+    An altair bar chart in html format for Dash
     """
     
     province_capacity = wind.groupby("Province/Territory", as_index=False).aggregate("sum").sort_values(by="Turbine rated capacity (kW)", ascending=False)
     province_capacity["Turbine rated capacity (kW)"] /= 1000
     province_capacity = province_capacity.rename(columns={"Turbine rated capacity (kW)": "Total Capacity (MW)","Province/Territory":"Province"})
 
-    chart=alt.Chart(province_capacity, title="Total Wind Capacity by Province").mark_bar().encode(
+    chart=alt.Chart(
+        province_capacity, 
+        title="Total Wind Capacity by Province"
+    ).mark_bar().encode(
         x=alt.X("Total Capacity (MW)"),
         y=alt.Y("Province", sort=province_capacity["Province"].to_list()),
         color=alt.condition(

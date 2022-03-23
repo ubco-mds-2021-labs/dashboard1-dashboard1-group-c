@@ -5,6 +5,18 @@ from data import load_data
 
 
 def line_chart(province: str = None) -> str:
+    """
+    Function for generating cumulative turbine counts over time as a line graph 
+
+    Parameters:
+    -----------
+    province: string indicating which province to generate the graph for (null
+              value taken to mean all of Canada)
+
+    Returns:
+    --------
+    An Altair plot in html string format
+    """
     data = load_data()
     if province:
         data = data.loc[data["Province/Territory"] == province]
