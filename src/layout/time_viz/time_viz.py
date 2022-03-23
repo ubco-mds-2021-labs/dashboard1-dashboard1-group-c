@@ -18,6 +18,7 @@ def line_chart(province: str = None) -> str:
     An Altair plot in html string format
     """
     data = load_data()
+
     if province:
         data = data.loc[data["Province/Territory"] == province]
     

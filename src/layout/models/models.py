@@ -1,12 +1,11 @@
 import altair as alt
-import pandas as pd
 
 from data import load_data
 
 
 wind = load_data(index=True)
 
-def bar_chart(selector = None):
+def bar_chart(selector: str = None) -> str:
     """
     Function returns a bar chart of model count in each province
     
