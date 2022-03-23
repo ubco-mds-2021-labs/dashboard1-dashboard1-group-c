@@ -9,6 +9,6 @@ app = Dash(
     server=server,
     external_stylesheets=[dbc.themes.BOOTSTRAP]
 )
-app.layout = html.Div()
+app.layout = html.Div("Placeholder")
 
 cache = Cache(app.server, config={"CACHE_TYPE": "SimpleCache"})
