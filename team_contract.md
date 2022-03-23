@@ -50,8 +50,8 @@ Here are the tables you are expected to complete (the first one is pre-filled in
 |--------------------|---------------|---------------|---------------|---------------|
 | Repository Setup   | -             | -             | -             | -             |
 | Sketch             | -             | 100%          | -             | -             |
-| Documentation      | 30%           |               |               |               |
-| Project Management | 50%           |               |               |               |
+| Documentation      | 33%           | 33%           | -             | 33%           |
+| Project Management | 25%           | 25%           | 25%           | 25%           |
 | Troubleshooting    | -             | -             | -             | -             |
 
 Brief notes/explanations (optional):
@@ -62,10 +62,10 @@ Brief notes/explanations (optional):
 
 | Category                  | Sean Casey  | Aishwarya Sharma | Tingwen Hua | Ling Xiang Zou |
 |---------------------------|---------------|---------------|---------------|---------------|
-| Documentation/Reflection  | 10%           |               |               |               |
+| Documentation/Reflection  | -             | 80%           | 20%           |  -            |
 | Writing new code          | 25%           | 25%           | 25%           | 25%           |
-| Code Reviews/editing      | 100%          |               |               |               |
-| Project Management        | 60%           |               |               |               |
+| Code Reviews/editing      | 100%          | -             | -             | -             |
+| Project Management        | 40%           | 10%           | 10%           | 40%           |
 | Testing & Troubleshooting | 25%           | 25%           | 25%           | 25%           |
 
 Brief notes/explanations (optional):
@@ -76,10 +76,10 @@ Brief notes/explanations (optional):
 
 | Category                  | Sean Casey  | Aishwarya Sharma | Tingwen Hua | Ling Xiang Zou |
 |---------------------------|---------------|---------------|---------------|---------------|
-| Documentation/Reflection  | 10%           |               |               |               |
-| Writing new code          | 25%           | 25%           | 25%           | 25%           |
-| Code Reviews/editing      | 100%          |               |               |               |
-| Project Management        | 60%           |               |               |               |
+| Documentation/Reflection  | -             | 100%          | -             | -             |
+| Writing new code          | 25%           | 25%           | 20%           | 30%           |
+| Code Reviews/editing      | 100%          | -             | -             | -             |
+| Project Management        | 25%           | 25%           | 25%           | 25%           |
 | Testing & Troubleshooting | 25%           | 25%           | 25%           | 25%           |
 
 Brief notes/explanations (optional):
@@ -88,11 +88,11 @@ Brief notes/explanations (optional):
 
 | Category                  | Sean Casey  | Aishwarya Sharma | Tingwen Hua | Ling Xiang Zou |
 |---------------------------|---------------|---------------|---------------|---------------|
-| Documentation/Reflection  | 25%           |               |               |               |
+| Documentation/Reflection  | -             | 100%          |  -            |  -            |
 | Writing new code          | 25%           | 25%           | 25%           | 25%           |
-| Code Reviews/editing      | 100%          |               |               |               |
+| Code Reviews/editing      | 100%          | -             | -             |  -            |
 | Project Management        | 25%           | 25%           | 25%           | 25%           |
 | Testing & Troubleshooting | 25%           | 25%           | 25%           | 25%           |
 
 Brief notes/explanations (optional):
-- Documentation for this milestone consisted mostly of writing code comments and docstrings
+
