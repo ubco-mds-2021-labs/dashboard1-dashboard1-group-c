@@ -9,6 +9,8 @@ Link to access our deployed app:
 
 - Aishwarya Sharma : https://windturbineapp.herokuapp.com/
 
+  Milestone 4 : https://windturbine-final.herokuapp.com/
+
 - Sean Casey: https://data551-dash-app.herokuapp.com/
 
 - LingXiang Zou: https://data551-group-c-dashboard.herokuapp.com
