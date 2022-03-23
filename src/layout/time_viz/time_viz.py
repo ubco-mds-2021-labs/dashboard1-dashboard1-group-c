@@ -4,6 +4,8 @@ import pandas as pd
 from data import load_data
 
 
+wind = load_data()
+
 def line_chart(province: str = None) -> str:
     """
     Function for generating cumulative turbine counts over time as a line graph 
@@ -17,10 +19,12 @@ def line_chart(province: str = None) -> str:
     --------
     An Altair plot in html string format
     """
-    data = load_data()
+    # data = load_data()
 
     if province:
-        data = data.loc[data["Province/Territory"] == province]
+        data = wind.loc[wind["Province/Territory"] == province]
+    else:
+        data = wind
     
     start_year = max(data["Commissioning date"].min() - 1, 1993)
     end_year = data["Commissioning date"].max()
