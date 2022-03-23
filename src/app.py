@@ -1,4 +1,4 @@
-from dash import Dash
+from dash import Dash, html
 import dash_bootstrap_components as dbc
 from flask_caching import Cache
 import flask
@@ -9,5 +9,6 @@ app = Dash(
     server=server,
     external_stylesheets=[dbc.themes.BOOTSTRAP]
 )
+app.layout = html.Div()
 
 cache = Cache(app.server, config={"CACHE_TYPE": "SimpleCache"})
