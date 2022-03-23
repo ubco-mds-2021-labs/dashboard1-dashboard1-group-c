@@ -1,10 +1,12 @@
 import altair as alt
 
 from data import load_data
+from app import cache
 
 
 wind = load_data(index=True)
 
+@cache.memoize(timeout=50)
 def bar_chart(selector: str = None) -> str:
     """
     Function returns a bar chart of model count in each province

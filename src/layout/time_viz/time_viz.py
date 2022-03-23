@@ -2,10 +2,12 @@ import altair as alt
 import pandas as pd
 
 from data import load_data
+from app import cache
 
 
 wind = load_data()
 
+@cache.memoize(timeout=50)
 def line_chart(province: str = None) -> str:
     """
     Function for generating cumulative turbine counts over time as a line graph 

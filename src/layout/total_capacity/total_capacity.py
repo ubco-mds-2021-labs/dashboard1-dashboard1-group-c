@@ -3,11 +3,14 @@ from dash import html
 import altair as alt
 
 from data import load_data
+from app import cache
+
 
 #Reading data
 wind = load_data()
 
 #Function for creating bar graph for total capacity as per province
+@cache.memoize(timeout=50)
 def plot_capacity(province: str = None) -> str:  
     """
     A function that displays the total capacity of wind turbines per province.
