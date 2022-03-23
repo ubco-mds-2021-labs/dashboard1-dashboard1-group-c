@@ -1,6 +1,7 @@
 from dash import html
 import altair as alt
 from data import load_geo_data, load_data
+from app import cache
 
 alt.data_transformers.disable_max_rows()
 
@@ -10,6 +11,7 @@ canada_df = load_geo_data()
 wind = load_data(index=True)
 
 # function for altair plot
+@cache.memoize(timeout=50)
 def plot_province(prov: str, year: int) -> str:
     """
     A function that plot the location of wind turbine on a geographic map.
@@ -43,7 +45,7 @@ def plot_province(prov: str, year: int) -> str:
     
     # location plot
     pts = alt.Chart(wind_province).mark_circle(
-        color='black', 
+        color='red', 
         opacity=0.3,
         size = 5
     ).encode(
