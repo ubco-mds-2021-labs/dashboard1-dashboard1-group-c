@@ -14,6 +14,8 @@ Link to access our deployed app:
 - Sean Casey: https://data551-dash-app.herokuapp.com/
 
 - LingXiang Zou: https://data551-group-c-dashboard.herokuapp.com
+  
+  Milestone 4: https://ubc-final-dashboard.herokuapp.com
 
 - Tingwen Hua: https://project551dashboard.herokuapp.com/
 
